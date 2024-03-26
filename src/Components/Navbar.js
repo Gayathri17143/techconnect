@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +12,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
@@ -21,12 +21,61 @@ import "./Navbar.css"
 import Dialog from '@mui/material/Dialog';
 import LoginForm from "./LoginForm";
 import Banner from '../assets/Capture.PNG';
+import LogoutIcon from '@mui/icons-material/Logout';
+// import { useHistory } from "react-router-dom";
+
 const pages = ['News', 'Videos'];
-const settings = ['MyProfile', 'Order', 'Whislit', 'Coupons', 'Gift Cards', 'Logout', 'Notification'];
+// const settings = ['MyProfile', 'Order', 'Whislit', 'Coupons', 'Gift Cards', 'Logout', 'Notification'];
+
+const settings = [
+    {
+        id: 1,
+        name: "MyProfile",
+        link: "/myprofile"
+    },
+    {
+        id: 2,
+        name: "Your Orders",
+        link: "/yourorders"
+    },
+    {
+        id: 3,
+        name: "Whislit",
+        link: "/whislit"
+    },
+    {
+        id: 4,
+        name: "Coupons",
+        link: "/coupons"
+    },
+    {
+        id: 5,
+        name: "Gift Cards",
+        link: "/giftcards"
+    },
+    {
+        id: 6,
+        name: "Logout",
+
+    },
+    {
+        id: 7,
+        name: "Notification",
+        link: "/notification"
+    },
+]
 function ResponsiveAppBar() {
+   
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [open, setOpen] = React.useState(false);
+    // const [isLoginned, setisLoginned] = React.useState(true);
+
+    const token = localStorage.getItem('access_token');
+    const isLoginned = !!token;
+    // const navigate = useNavigate();
+    // const navigate = useHistory();
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -46,6 +95,16 @@ function ResponsiveAppBar() {
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
+    };
+    const handleLogout = () => {
+        localStorage.removeItem('access_token'); // Remove token from local storage
+        // history.push('/login'); // Redirect the user to the login page after logout
+        handleCloseUserMenu(); // Close the menu after logout
+    };
+    const handleOpen = () => {
+        // localStorage.removeItem('access_token'); // Remove token from local storage
+        // navigate("/UserProfile");
+        // handleCloseUserMenu(); // Close the menu after logout
     };
 
     const top100Films = [
@@ -175,33 +234,144 @@ function ResponsiveAppBar() {
         { title: 'Monty Python and the Holy Grail', year: 1975 },
     ];
     return (
-        <AppBar position="static" sx={{ background: 'none' }} >
+        <AppBar position="static" sx={{ background: 'none', color: 'black' }} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ justifyContent: 'space-between' }} >
-                    {/* <AcUnitIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    {/* <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="#TechConnect"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            //   fontFamily: 'monospace',
-                            fontWeight: 700,
-                            //   letterSpacing: '.2rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                            fontSize: '18px'
-                        }}
-                    >
-                        TechConnect
-                    </Typography> */}
+
+
                     <img
                         className="d-block "
                         src={Banner}
                         alt="First slide"
                     />
+
+
+
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: "3%" }}  >
+
+                        {pages.map((page) => (
+                            <Button
+                                key={page}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'black', display: 'block' }}
+                            >
+                                {page}
+                            </Button>
+                        ))}
+                    </Box>
+
+                    <Stack spacing={1} sx={{ width: 800 }} direction="row" alignItems="center" gap={3}>
+
+                        <Autocomplete
+                            fullWidth
+                            freeSolo
+                            size='small'
+                            id="free-solo-2-demo"
+                            disableClearable
+
+                            sx={{ marginRight: '10px', display: { xs: "none", md: "block" } }}
+                            options={top100Films.map((option) => option.title)}
+                            renderInput={(params) => (
+                                <TextField
+
+                                    {...params}
+                                    label="Search Products"
+                                    InputProps={{
+                                        ...params.InputProps,
+                                        type: 'search',
+                                    }}
+                                />
+                            )}
+                        />
+                        <Stack direction="row">
+                            <div>
+                                {isLoginned ? (
+                                    <Typography >My Account</Typography>
+                                ) : (
+                                    <Button variant="contained" onClick={handleClickOpen}>
+                                        Login
+                                    </Button>
+                                )}
+
+                            </div>
+
+                        </Stack>
+
+
+
+                        <Dialog
+                            open={open}
+                            onClose={handleClose}>
+
+                            <DialogContent>
+                                <LoginForm />
+                            </DialogContent>
+                        </Dialog>
+                        {/* <ShoppingCartCheckoutIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} /> */}
+                        <Box sx={{ flexGrow: 0 }}>
+                            {isLoginned ? (
+                                <><Tooltip title="Open settings">
+                                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                        <Avatar alt="Gemy Sharp" src="/static/images/avatar/2.jpg" />
+                                    </IconButton>
+                                </Tooltip>
+                                    <Menu
+                                        sx={{ mt: '45px' }}
+                                        id="menu-appbar"
+                                        anchorEl={anchorElUser}
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        keepMounted
+                                        transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        open={Boolean(anchorElUser)}
+                                        onClose={handleCloseUserMenu}
+                                    >
+                                        {/* {settings.map((setting) => (
+                                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                                <Typography textAlign="center">{setting.name}</Typography>
+                                            </MenuItem>
+                                        ))} */}
+                                      
+                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                            <Button href='/profile'>MyProfile</Button>
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
+                                        </MenuItem>
+                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                            <Button href='/yourorders'>Your Orders</Button>
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
+                                        </MenuItem>
+                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                            <Button href='/whislit'>Whislit</Button>
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
+                                        </MenuItem>
+                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                            <Button href='/coupons'>Coupons</Button>
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
+                                        </MenuItem>
+                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                            <Button href='/giftcards'>Gift Cards</Button>
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
+                                        </MenuItem>
+                                        <MenuItem onClick={handleLogout}> {/* Add logout option */}
+                                            <Typography textAlign="center">Logout</Typography>
+                                            <LogoutIcon sx={{ ml: 1 }} />
+                                        </MenuItem>
+                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                            <Button href='/notification'>Notification</Button>
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
+                                        </MenuItem>
+                                    </Menu></>
+                            ) : (
+                                null
+                            )}
+
+                        </Box>
+                    </Stack>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -232,126 +402,12 @@ function ResponsiveAppBar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center" fontWeight={600}>{page}</Typography>
+                                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{ color: 'black', fontWeight: '600' }}>
+                                    <Typography textAlign="center"  >{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    {/* <AcUnitIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: "3%" }}  >
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
-
-                        </IconButton>
-
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block', fontWeight: '600' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box>
-                    {/* <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            //   fontFamily: 'monospace',
-                            fontWeight: 700,
-                            //   letterSpacing: '.2rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                            fontSize: '18px'
-                        }}
-                    >
-                        TechConnect
-                    </Typography> */}
-
-
-
-                    <Stack spacing={1} sx={{ width: 800 }} direction="row" alignItems="center" gap={3}>
-
-                        <Autocomplete
-                            fullWidth
-                            freeSolo
-                            size='small'
-                            id="free-solo-2-demo"
-                            disableClearable
-
-                            sx={{ marginRight: '10px', display: { xs: "none", md: "block" } }}
-                            options={top100Films.map((option) => option.title)}
-                            renderInput={(params) => (
-                                <TextField
-
-                                    {...params}
-                                    label="Search Products"
-                                    InputProps={{
-                                        ...params.InputProps,
-                                        type: 'search',
-                                    }}
-                                />
-                            )}
-                        />
-                        <Stack>
-                            <Button variant="contained" onClick={handleClickOpen}>
-                                SignUp
-                            </Button>
-                        </Stack>
-
-                        <Dialog
-                            open={open}
-                            onClose={handleClose}>
-
-                            <DialogContent>
-                                <LoginForm />
-                            </DialogContent>
-                        </Dialog>
-                        <ShoppingCartCheckoutIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />
-                        <Box sx={{ flexGrow: 0 }}>
-                            <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                    <Avatar alt="Gemy Sharp" src="/static/images/avatar/2.jpg" />
-                                </IconButton>
-                            </Tooltip>
-                            <Menu
-                                sx={{ mt: '45px' }}
-                                id="menu-appbar"
-                                anchorEl={anchorElUser}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorElUser)}
-                                onClose={handleCloseUserMenu}
-                            >
-                                {settings.map((setting) => (
-                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center">{setting}</Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
-                        </Box>
-                    </Stack>
-
                 </Toolbar>
                 <Toolbar sx={{ display: { xs: "block", md: "none" } }}>
                     <Autocomplete

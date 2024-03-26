@@ -17,10 +17,13 @@ const LoginForm = ({ switchForm }) => {
         try {
             const response = await axios.post(' https://api.escuelajs.co/api/v1/auth/login', formData);
             console.log(response.data); // handle success response
+            const { access_token } = response.data; // Extract access token from response
+            localStorage.setItem("access_token", access_token); // Store access token in local storage
         } catch (error) {
             console.error(error); // handle error response
         }
     };
+
 
     return (
         <Container maxWidth="xs">
@@ -44,6 +47,7 @@ const LoginForm = ({ switchForm }) => {
                     fullWidth
                     margin="normal"
                 />
+
                 <Typography align='right' mt={2} mb={2}>
 
                     <Link href="" >
@@ -81,11 +85,14 @@ const RegisterForm = ({ switchForm }) => {
         e.preventDefault();
         try {
             const response = await axios.post(' https://api.escuelajs.co/api/v1/users/', formData);
-            console.log(response.data); // handle success response
+            console.log(response.data);
+            // localStorage.setItem("access_token", response.data.access_token); // handle success response
         } catch (error) {
             console.error(error); // handle error response
         }
     };
+
+
 
     return (
         <Container maxWidth="xs">
@@ -118,7 +125,7 @@ const RegisterForm = ({ switchForm }) => {
                     fullWidth
                     margin="normal"
                 />
-                <TextField  
+                <TextField
 
                     type="url"
                     fullWidth
@@ -128,7 +135,7 @@ const RegisterForm = ({ switchForm }) => {
                     value={formData.avatar}
                     onChange={handleChange}
                 />
-                <Button sx={{marginTop:2}} type="submit" variant="contained" color="primary" fullWidth>
+                <Button sx={{ marginTop: 2 }} type="submit" variant="contained" color="primary" fullWidth>
                     Register
                 </Button>
                 <Typography mt={2}>

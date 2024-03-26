@@ -27,6 +27,7 @@ const navBarData = [
             //         },
             //     ],
             // },
+            
             {
                 label: "IPhones",
                 url: "/iphones",
@@ -39,6 +40,40 @@ const navBarData = [
                 label: "Basic Phones",
                 url: "/basicphones",
             },
+            {
+                label: "Accessories",
+                url: "/Accessories",
+                submenu: [
+                    {
+                        label: "Chargers",
+                        url: "/Accessories/Chargers",
+                    },
+                    {
+                        label: "Adapters",
+                        url: "/Accessories/Adapters",
+                    },
+                    {
+                        label: "Cables & Connectors",
+                        url: "/Accessories/Cables & Connectors",
+                    },
+                ],
+            },
+            {
+                label: "Powerbanks",
+                url: "/Powerbanks",
+            },
+            {
+                label: "Cameras",
+                url: "/Cameras",
+                submenu: [
+                    {
+                        label: "WebCamera",
+                        url: "/Cameras/WebCamera",
+                    },
+                   
+                ],
+            },
+           
         ],
     },
     {
@@ -215,48 +250,7 @@ const navBarData = [
         ],
         
     },
-    {
-        label: "Other Gadgets",
-        submenu: [
-           
-            {
-                label: "Powerbanks",
-                url: "/Powerbanks",
-            },
-            {
-                label: "Cameras",
-                url: "/Cameras",
-                submenu: [
-                    {
-                        label: "WebCameras",
-                        url: "/Cameras/WebCameras",
-                    },
-                   
-                ],
-            },
-            {
-                label: "Accessories",
-                url: "/Accessories",
-                submenu: [
-                    {
-                        label: "Chargers",
-                        url: "/Accessories/Chargers",
-                    },
-                    {
-                        label: "Adapters",
-                        url: "/Accessories/Adapters",
-                    },
-                    {
-                        label: "Cables & Connectors",
-                        url: "/Accessories/Cables & Connectors",
-                    },
-                ],
-            },
-           
-            
-            
-        ],
-    },
+    
     // {
     //     label: "About",
     //     url: "/about",
