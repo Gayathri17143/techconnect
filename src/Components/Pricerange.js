@@ -12,9 +12,9 @@ function RangeSlider() {
   };
 
   return (
-    <Box sx={{ width: 500 }}>
-      <Typography id="range-slider" gutterBottom>
-        Range Slider
+    <Box sx={{ width: 500,margin:'0 auto'}}padding={2}>
+      <Typography id="range-slider" sx={{color:'#000', textAlign:'left'}} fontWeight={600} gutterBottom>
+        Shop By Price
       </Typography>
       <Slider
     

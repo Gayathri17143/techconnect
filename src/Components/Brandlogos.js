@@ -12,7 +12,7 @@ import Image9 from '../assets/nokia.png'
 
 const Gallery = () => {
   return (
-    <Carousel cols={3} rows={2} gap={2} loop>
+    <Carousel cols={3} rows={2} gap={1} loop>
       <Carousel.Item>
         <img width="100%" src= {Image1} alt="text" />
       </Carousel.Item>

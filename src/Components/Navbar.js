@@ -12,7 +12,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Tooltip from '@mui/material/Tooltip';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import DialogContent from '@mui/material/DialogContent';
@@ -22,6 +22,8 @@ import Dialog from '@mui/material/Dialog';
 import LoginForm from "./LoginForm";
 import Banner from '../assets/Capture.PNG';
 import LogoutIcon from '@mui/icons-material/Logout';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 // import { useHistory } from "react-router-dom";
 
 const pages = ['News', 'Videos'];
@@ -30,7 +32,7 @@ const pages = ['News', 'Videos'];
 const settings = [
     {
         id: 1,
-        name: "MyProfile",
+        name: "My Profile",
         link: "/myprofile"
     },
     {
@@ -58,11 +60,11 @@ const settings = [
         name: "Logout",
 
     },
-    {
-        id: 7,
-        name: "Notification",
-        link: "/notification"
-    },
+    // {
+    //     id: 7,
+    //     name: "Notification",
+    //     link: "/notification"
+    // },
 ]
 function ResponsiveAppBar() {
    
@@ -253,14 +255,14 @@ function ResponsiveAppBar() {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block' }}
+                                sx={{ my: 2, color: 'black', display: 'block',fontWeight:'600' }}
                             >
                                 {page}
                             </Button>
                         ))}
                     </Box>
 
-                    <Stack spacing={1} sx={{ width: 800 }} direction="row" alignItems="center" gap={3}>
+                    <Stack spacing={1} sx={{ width: 800  }} direction="row" alignItems="center" gap={3}>
 
                         <Autocomplete
                             fullWidth
@@ -268,7 +270,7 @@ function ResponsiveAppBar() {
                             size='small'
                             id="free-solo-2-demo"
                             disableClearable
-
+                            
                             sx={{ marginRight: '10px', display: { xs: "none", md: "block" } }}
                             options={top100Films.map((option) => option.title)}
                             renderInput={(params) => (
@@ -283,7 +285,8 @@ function ResponsiveAppBar() {
                                 />
                             )}
                         />
-                        <Stack direction="row">
+                          {/* <SearchOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} /> */}
+                        {/* <Stack direction="row">
                             <div>
                                 {isLoginned ? (
                                     <Typography >My Account</Typography>
@@ -295,7 +298,7 @@ function ResponsiveAppBar() {
 
                             </div>
 
-                        </Stack>
+                        </Stack> */}
 
 
 
@@ -307,7 +310,8 @@ function ResponsiveAppBar() {
                                 <LoginForm />
                             </DialogContent>
                         </Dialog>
-                        {/* <ShoppingCartCheckoutIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} /> */}
+                        <ShoppingCartOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />
+                        <NotificationsActiveOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />
                         <Box sx={{ flexGrow: 0 }}>
                             {isLoginned ? (
                                 <><Tooltip title="Open settings">
@@ -337,37 +341,39 @@ function ResponsiveAppBar() {
                                             </MenuItem>
                                         ))} */}
                                       
-                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
-                                            <Button href='/profile'>MyProfile</Button>
+                                        <MenuItem onClick={handleOpen}>  
+                                            <Button href='/profile'>My Profile</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                        <MenuItem onClick={handleOpen}> 
                                             <Button href='/yourorders'>Your Orders</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                        <MenuItem onClick={handleOpen}>  
                                             <Button href='/whislit'>Whislit</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                        <MenuItem onClick={handleOpen}>  
                                             <Button href='/coupons'>Coupons</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                        <MenuItem onClick={handleOpen}>  
                                             <Button href='/giftcards'>Gift Cards</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleLogout}> {/* Add logout option */}
+                                        <MenuItem onClick={handleLogout}>  
                                             <Typography textAlign="center">Logout</Typography>
                                             <LogoutIcon sx={{ ml: 1 }} />
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}> {/* Add logout option */}
+                                        {/* <MenuItem onClick={handleOpen}>  
                                             <Button href='/notification'>Notification</Button>
-                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
-                                        </MenuItem>
+                                            <LogoutIcon sx={{ ml: 1 }} />
+                                        </MenuItem> */}
                                     </Menu></>
                             ) : (
-                                null
+                                <Button variant="contained" onClick={handleClickOpen}>
+                                Login
+                            </Button>
                             )}
 
                         </Box>
@@ -409,7 +415,7 @@ function ResponsiveAppBar() {
                         </Menu>
                     </Box>
                 </Toolbar>
-                <Toolbar sx={{ display: { xs: "block", md: "none" } }}>
+                <Toolbar sx={{ display: { xs: "block", md: "none"  } }}>
                     <Autocomplete
                         fullWidth
                         freeSolo
@@ -430,6 +436,7 @@ function ResponsiveAppBar() {
                             />
                         )}
                     />
+                  
                 </Toolbar>
             </Container>
         </AppBar>

@@ -6,27 +6,11 @@ import {
     NavDropdown,
 } from "react-bootstrap";
 const navBarData = [
-    // {
-    //     label: "Home",
-    //     url: "/",
-    // },
+   
     {
         label: "Mobiles",
         submenu: [
-            // {
-            //     label: "React",
-            //     url: "/react",
-            //     submenu: [
-            //         {
-            //             label: "Hooks",
-            //             url: "/react/hooks",
-            //         },
-            //         {
-            //             label: "Context",
-            //             url: "/react/context",
-            //         },
-            //     ],
-            // },
+           
             
             {
                 label: "IPhones",
@@ -251,10 +235,7 @@ const navBarData = [
         
     },
     
-    // {
-    //     label: "About",
-    //     url: "/about",
-    // },
+  
 ];
 
 function App() {

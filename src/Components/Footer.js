@@ -2,17 +2,17 @@ import React from "react";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="foot-container">
+    <div className="foot-container pad">
       <div className="foot-item">
         <ul className="menu">
           <li>
             <a>
               <i class="fa-regular fa-phone">
-                <div className="foot-text">044-26623662</div>
+                <div className="foot-text">123456789</div>
               </i>
               <i class="fa-regular fa-location-dot">
                 <div className="foot-text">
-                  25 West 21th Street,Miami FL,USA
+                  25 West 21th Street,Chennai,India.
                 </div>
               </i>
               <i class="fa-regular fa-envelope">

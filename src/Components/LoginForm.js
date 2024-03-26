@@ -71,16 +71,18 @@ const LoginForm = ({ switchForm }) => {
 
 const RegisterForm = ({ switchForm }) => {
     const [formData, setFormData] = useState({
-        name: '',
+        firstname: '',
+        lastname:'',
         email: '',
         password: '',
+        mobilenumber:'',
         avatar: ''
     });
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -99,7 +101,16 @@ const RegisterForm = ({ switchForm }) => {
             <Typography variant="h5">Register</Typography>
             <form onSubmit={handleSubmit}>
                 <TextField
-                    label="Name"
+                    label="FirstName"
+                    name="name"
+                    type="text"
+                    fullWidth
+                    margin="normal"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                 <TextField
+                    label="LastName"
                     name="name"
                     type="text"
                     fullWidth
@@ -122,6 +133,15 @@ const RegisterForm = ({ switchForm }) => {
                     type="password"
                     value={formData.password}
                     onChange={handleChange}
+                    fullWidth
+                    margin="normal"
+                />
+                 <TextField
+                    label="Mobile Number"
+                    name="number"
+                    type="number"
+                    // value={formData.number}
+                    // onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />

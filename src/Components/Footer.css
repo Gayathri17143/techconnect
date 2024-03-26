@@ -70,7 +70,10 @@
   }
   .foot-item{
     /* width: 40%; */
-    padding :3%;
+    padding :5%;
+  }
+  .pad{
+    padding: 1%;
   }
   @media(max-width: 991px) {
     .foot-container {
