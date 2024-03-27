@@ -12,60 +12,60 @@ import Image9 from '../assets/nokia.png'
 
 const Gallery = () => {
   return (
-    <Carousel cols={3} rows={2} gap={1} loop>
+    <Carousel cols={3} rows={3} gap={1} loop>
       <Carousel.Item>
-        <img width="100%" src= {Image1} alt="text" />
+        <img width="50%" src= {Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-        <img width="100%" src={Image2} alt="text" />
+        <img width="50%" src={Image2} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-        <img width="100%" src={Image3} alt="text"  />
+        <img width="50%" src={Image3} alt="text"  />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image4} alt="text" />
+      <img width="50%" src={Image4} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image5} alt="text" />
+      <img width="50%" src={Image5} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image6} alt="text" />
+      <img width="50%" src={Image6} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image7} alt="text" />
+      <img width="50%" src={Image7} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image8} alt="text" />
+      <img width="50%" src={Image8} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-        <img width="100%" src= {Image9} alt="text" />
+        <img width="50%" src= {Image9} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-        <img width="100%" src={Image1} alt="text" />
+        <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-        <img width="100%" src={Image1} alt="text" />
+        <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
       <Carousel.Item>
-      <img width="100%" src={Image1} alt="text" />
+      <img width="50%" src={Image1} alt="text" />
       </Carousel.Item>
      
       {/* ... */}

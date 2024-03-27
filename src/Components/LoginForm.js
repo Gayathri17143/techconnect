@@ -71,8 +71,8 @@ const LoginForm = ({ switchForm }) => {
 
 const RegisterForm = ({ switchForm }) => {
     const [formData, setFormData] = useState({
-        firstname: '',
-        lastname:'',
+        
+        username:'',
         email: '',
         password: '',
         mobilenumber:'',
@@ -100,17 +100,9 @@ const RegisterForm = ({ switchForm }) => {
         <Container maxWidth="xs">
             <Typography variant="h5">Register</Typography>
             <form onSubmit={handleSubmit}>
-                <TextField
-                    label="FirstName"
-                    name="name"
-                    type="text"
-                    fullWidth
-                    margin="normal"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
+                
                  <TextField
-                    label="LastName"
+                    label="UserName"
                     name="name"
                     type="text"
                     fullWidth
@@ -138,10 +130,10 @@ const RegisterForm = ({ switchForm }) => {
                 />
                  <TextField
                     label="Mobile Number"
-                    name="number"
+                    // name="number"
                     type="number"
-                    // value={formData.number}
-                    // onChange={handleChange}
+                    value={formData.number}
+                    onChange={handleChange}
                     fullWidth
                     margin="normal"
                 />

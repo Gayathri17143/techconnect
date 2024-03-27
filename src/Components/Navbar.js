@@ -67,7 +67,7 @@ const settings = [
     // },
 ]
 function ResponsiveAppBar() {
-   
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [open, setOpen] = React.useState(false);
@@ -246,23 +246,21 @@ function ResponsiveAppBar() {
                         src={Banner}
                         alt="First slide"
                     />
-
-
-
+ 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: "3%" }}  >
 
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block',fontWeight:'600' }}
+                                sx={{ my: 2, color: 'black', display: 'block', fontWeight: '600' }}
                             >
                                 {page}
                             </Button>
                         ))}
                     </Box>
 
-                    <Stack spacing={1} sx={{ width: 800  }} direction="row" alignItems="center" gap={3}>
+                    <Stack spacing={1} sx={{ width: 500 }} direction="row" alignItems="center" gap={3}>
 
                         <Autocomplete
                             fullWidth
@@ -270,7 +268,7 @@ function ResponsiveAppBar() {
                             size='small'
                             id="free-solo-2-demo"
                             disableClearable
-                            
+
                             sx={{ marginRight: '10px', display: { xs: "none", md: "block" } }}
                             options={top100Films.map((option) => option.title)}
                             renderInput={(params) => (
@@ -285,7 +283,11 @@ function ResponsiveAppBar() {
                                 />
                             )}
                         />
-                          {/* <SearchOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} /> */}
+                        {isLoginned ? (
+                          <ShoppingCartOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />):(null)}
+                            {isLoginned ? (
+                        <NotificationsActiveOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />):(null)}
+                        {/* <SearchOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} /> */}
                         {/* <Stack direction="row">
                             <div>
                                 {isLoginned ? (
@@ -299,9 +301,7 @@ function ResponsiveAppBar() {
                             </div>
 
                         </Stack> */}
-
-
-
+ 
                         <Dialog
                             open={open}
                             onClose={handleClose}>
@@ -310,15 +310,18 @@ function ResponsiveAppBar() {
                                 <LoginForm />
                             </DialogContent>
                         </Dialog>
-                        <ShoppingCartOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />
-                        <NotificationsActiveOutlinedIcon sx={{ display: { xs: 'flex', md: 'block', lg: 'block', xl: 'block' }, color: '#343a40', m: 1 }} />
+                       
                         <Box sx={{ flexGrow: 0 }}>
+                            
                             {isLoginned ? (
-                                <><Tooltip title="Open settings">
-                                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                        <Avatar alt="Gemy Sharp" src="/static/images/avatar/2.jpg" />
+                                <><Tooltip title="Open settings" >
+                                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}   >
+                                       
+                                      
+                        <Avatar alt="Gemy Sharp" src="/static/images/avatar/2.jpg" sx={{margin:2}}/>
                                     </IconButton>
                                 </Tooltip>
+
                                     <Menu
                                         sx={{ mt: '45px' }}
                                         id="menu-appbar"
@@ -340,30 +343,31 @@ function ResponsiveAppBar() {
                                                 <Typography textAlign="center">{setting.name}</Typography>
                                             </MenuItem>
                                         ))} */}
-                                      
-                                        <MenuItem onClick={handleOpen}>  
+
+                                        <MenuItem onClick={handleOpen}>
                                             <Button href='/profile'>My Profile</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}> 
+                                        <MenuItem onClick={handleOpen}>
                                             <Button href='/yourorders'>Your Orders</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}>  
+                                        <MenuItem onClick={handleOpen}>
                                             <Button href='/whislit'>Whislit</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}>  
+                                        <MenuItem onClick={handleOpen}>
                                             <Button href='/coupons'>Coupons</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleOpen}>  
+                                        <MenuItem onClick={handleOpen}>
                                             <Button href='/giftcards'>Gift Cards</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
-                                        <MenuItem onClick={handleLogout}>  
-                                            <Typography textAlign="center">Logout</Typography>
-                                            <LogoutIcon sx={{ ml: 1 }} />
+                                        <MenuItem onClick={handleLogout}>
+                                            <Button>Logout</Button>
+                                            {/* <Typography textAlign="center"></Typography> */}
+                                            {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
                                         {/* <MenuItem onClick={handleOpen}>  
                                             <Button href='/notification'>Notification</Button>
@@ -372,11 +376,12 @@ function ResponsiveAppBar() {
                                     </Menu></>
                             ) : (
                                 <Button variant="contained" onClick={handleClickOpen}>
-                                Login
-                            </Button>
+                                    SignUp/Login
+                                </Button>
                             )}
 
                         </Box>
+
                     </Stack>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -415,7 +420,7 @@ function ResponsiveAppBar() {
                         </Menu>
                     </Box>
                 </Toolbar>
-                <Toolbar sx={{ display: { xs: "block", md: "none"  } }}>
+                <Toolbar sx={{ display: { xs: "block", md: "none" } }}>
                     <Autocomplete
                         fullWidth
                         freeSolo
@@ -436,7 +441,7 @@ function ResponsiveAppBar() {
                             />
                         )}
                     />
-                  
+
                 </Toolbar>
             </Container>
         </AppBar>

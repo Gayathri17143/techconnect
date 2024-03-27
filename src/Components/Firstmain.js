@@ -21,17 +21,20 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: 'center',
   color: theme.palette.text.secondary,
+  boxShadow:'none',
+  border:'1px solid #ccc',
+borderRadius:'20px'
 }));
 
 export default function FullWidthGrid() {
   return (
-    <Box sx={{ flexGrow: 1,padding:3 }} >
-      <Grid container spacing={2} sx={{justifyContent:'center',alignItems:'center' }}>
-        <Grid item sm={12} xs={12} md={12} lg={8}  >
+    <Box sx={{ flexGrow: 1, padding: 3 }} >
+      <Grid container spacing={2} sx={{ justifyContent: 'center', alignItems: 'center' }}>
+        <Grid item sm={12} xs={12} md={12} lg={6}  >
           <Item>  <Pricerange />
             <Priceunder /></Item>
         </Grid>
-        <Grid item sm={12} xs={12} md={12} lg={4}>
+        <Grid item sm={12} xs={12} md={12} lg={6}>
           <Item>  <Brandlogos /></Item>
         </Grid>
         {/* <Grid item xs={6} md={4}>

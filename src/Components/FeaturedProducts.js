@@ -9,7 +9,7 @@ import Samsung from "../assets/samsung-galaxy-m15.jpg";
 
 const ImageGrid = () => {
   return (
-  <div className="mar" >
+  <div className="mar" style={{margin:'30px'}}>
     <h1 className="head">Feature Products</h1>
     <div className="grid-container-0">
      
