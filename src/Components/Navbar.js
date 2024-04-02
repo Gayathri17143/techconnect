@@ -353,7 +353,7 @@ function ResponsiveAppBar() {
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
                                         <MenuItem onClick={handleOpen}>
-                                            <Button href='/whislit'>Whislit</Button>
+                                            <Button href='/whislit'>Wishlist</Button>
                                             {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                                         </MenuItem>
                                         <MenuItem onClick={handleOpen}>

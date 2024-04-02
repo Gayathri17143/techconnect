@@ -11,18 +11,20 @@ import Firstmain from "./Components/Firstmain";
 // import Reviews from "./Components/Reviews";
 import UserProfile from "./Components/UserProfile";
 import Home from "./Components/Home";
+import Categories from "./Components/Categories";
 export default function App() {
       return (
-            <>
+            <Router>
                   <Navbar />
                   <Navigationbar />
-                  <Router>
+                  {/* <Router> */}
                         <Routes>
 
-                              <Route exact path="/" element={<Home />} />
-                              <Route exact path="/profile" element={<UserProfile />} />
+                              <Route exact path="/" element={<Home />} ></Route>
+                              <Route exact path="/profile" element={<UserProfile />} ></Route>
+                              <Route exact path="/categories" element={<Categories/>} ></Route>
                         </Routes>
-                  </Router>
+                  {/* </Router> */}
 
                  
                   {/* <Bannercarousel /> */}
@@ -33,6 +35,6 @@ export default function App() {
                   {/* <Reviews/> */}
                   <Footer/>
 
-            </>
+            </Router>
       );
 }

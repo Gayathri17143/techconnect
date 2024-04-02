@@ -9,6 +9,7 @@ const navBarData = [
    
     {
         label: "Mobiles",
+        url:'/categories',
         submenu: [
            
             
@@ -60,6 +61,7 @@ const navBarData = [
            
         ],
     },
+   
     {
         label: "Laptop & Tablets",
         submenu: [
@@ -272,7 +274,8 @@ function App() {
     };
     const navStyle = {
         color: "black",
-        fontWeight: "bold",
+        fontWeight: "bold"
+    
     };
     return (
         <Navbar
@@ -289,6 +292,7 @@ function App() {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
+                
                 <Nav
                     className="mr-auto"
                     style={navStyle}>

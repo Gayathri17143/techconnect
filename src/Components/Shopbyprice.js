@@ -15,10 +15,11 @@ import Banner9 from '../assets/9-MBL-WEB.webp';
 const SimpleCarousel = () => {
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
+        arrows:false,
         speed: 500,
-
+        autoplay :true,
         slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [
@@ -28,7 +29,7 @@ const SimpleCarousel = () => {
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -52,6 +53,7 @@ const SimpleCarousel = () => {
 
 
     return (
+        
         <div style={{margin:'30px'}}>
             <h4 style={{paddingLeft:'7%',color:'#000',fontWeight:'700' }}>Shop By Price</h4>
             <Slider {...settings} style={{padding:'20px'}} >
