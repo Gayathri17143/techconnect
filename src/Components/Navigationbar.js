@@ -9,17 +9,16 @@ const navBarData = [
    
     {
         label: "Mobiles",
-        url:'/categories',
+        
         submenu: [
-           
-            
+          
             {
                 label: "IPhones",
                 url: "/iphones",
             },
             {
                 label: "Smart Phones",
-                url: "/smartphones",
+                url:"/Categories",
             },
             {
                 label: "Basic Phones",

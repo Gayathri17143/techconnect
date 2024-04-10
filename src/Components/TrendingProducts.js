@@ -49,7 +49,7 @@ const SimpleCarousel = () => {
 
     return (
         <div style={{margin:'30px'}}>
-            <h4 style={{paddingLeft:'7%' ,fontWeight:'700',color:"#000"}}>Trending Gadgets</h4>
+            <h3 style={{paddingLeft:'7%' ,fontWeight:'600',color:"#000"}}>Trending Gadgets</h3>
             <Slider {...settings} style={{padding:'20px'}} >
                 <div >
                     <a href="https://example.com/page1">
@@ -60,7 +60,7 @@ const SimpleCarousel = () => {
                         />
                     </a>
                     <div style={{ textAlign: 'center', paddingTop: '10px' }}>
-                        <h4>True Wireless</h4>
+                        <h5>True Wireless</h5>
                         <p>₹ 1999</p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const SimpleCarousel = () => {
                         />
                     </a>
                     <div style={{ textAlign: 'center', paddingTop: '10px' }}>
-                        <h4>Neckband</h4>
+                        <h5>Neckband</h5>
                         <p>₹ 2,156</p>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ const SimpleCarousel = () => {
                         />
                     </a>
                     <div style={{ textAlign: 'center', paddingTop: '10px' }}>
-                        <h4>Smart Watches</h4>
+                        <h5>Smart Watches</h5>
                         <p>₹ 2,990</p>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const SimpleCarousel = () => {
                         />
                     </a>
                     <div style={{ textAlign: 'center', paddingTop: '10px' }}>
-                        <h4>PowerBanks</h4>
+                        <h5>PowerBanks</h5>
                         <p>₹ 1990</p>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ const SimpleCarousel = () => {
                         />
                     </a>
                     <div style={{ textAlign: 'center', paddingTop: '10px' }}>
-                        <h4>Surveillance Devices</h4>
+                        <h5>Surveillance Devices</h5>
                         <p>₹ 1,799</p>
                     </div>
                 </div>

@@ -13,87 +13,88 @@ const Data = [
       title: "Xiaomi 14 5G",
       category: "5G mobiles",
       price: "69,999",
-      img: "../assets/banner.jpg"
-      
+      img: mi,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "2",
       title: "Vivo v30 Pro 5G",
       category: "5G mobiles",
       price: "46,999",
-      img: {vivo},
-      
+      img: vivo,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "3",
       title: "Realme 12 pro Plus 5G",
       category: "5G mobiles",
       price: "33,999",
-      img: {realme}
-     
+      img: realme,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "4",
       title: "Redmi A2",
       category: "Low to high",
       price: "6,799",
-      img:{image1}
-    
+      img:image1,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "5",
       title: "Oppo A59 5G",
       category: "Low to high",
       price: "13,789",
-      img: {image2}
-     
+      img: image2,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "6",
       title: "Galaxy S23 Ultra",
       category: "Low to high",
       price: "1,09,999",
-      img: {image3}
-     
+      img: image3,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "7",
       title: "Galaxy S23 Ultra",
       category: "High to low",
       price: "1,09,999",
-      img: {image3}
-     
+      img: image3,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "8",
       title: "Oppo A59 5G",
       category: "High to low",
       price: "13,789",
-      img: {image2}
-      
+      img: image2,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "9",
       title: "Redmi A2",
       category: "High to low",
       price: "6,799",
-      img: {image1}
-     
+      img: image1,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
       id: "10",
       title: "Apple iphone 15",
       category: "Latest Smartphones",
       price: "68,990",
-      img:  {image4}
-      
+      img:  image4,
+      desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
     },
     {
         id: "11",
         title: "Galaxy A15 5G",
         category: "Latest Smartphones",
         price: "22,499",
-        img:   {image5}
+        img: image5,
+        desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
         
       },
       {
@@ -101,8 +102,8 @@ const Data = [
         title: "Oneplus 12R 5G ",
         category: "Latest Smartphones",
         price: "45,999",
-        img:  {image6}
-        
+        img:  image6,
+        desc:"gfeygbvyubyurinvirhnvinrhiuvhriuvbyo8r"
       },
   ];
    

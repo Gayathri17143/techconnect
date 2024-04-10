@@ -12,25 +12,24 @@ import Reviews from "./Reviews";
 import Brandlogos from "./Brandlogos";
 import React from 'react';
 import ImageGrid from "./ImageGrid";
- 
-
+ import Services from "./Services";
+ import Item from "./Filters/Item";
+//  import Location from "./Location";
 export default function App() {
 
       
       return (
             <>
-
-                  
+ 
                   <Bannercarousel />
+                  
                   <ImageGrid />
-                  {/* <Firstmain /> */}
-                  {/* <Brandlogos/> */}
-                  {/* <ResetPassword/> */}
-                  <TrendingProducts />
-                  {/* <Shopbyprice/> */}
-                  {/* <FeaturedProducts/> */}
-                  {/* <Reviews/> */}
+                  <Firstmain/>
 
+                 
+                  <FeaturedProducts/>
+                  <Services/>
+                  <TrendingProducts />
 
             </>
       );

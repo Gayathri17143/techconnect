@@ -1,6 +1,7 @@
 import React from "react";
 import Data from "./Data";
-
+import "./Buttons.css";
+import Item from "../Components/Filters/Item"
 const Buttons = ({ filterItem, setItem, menuItems }) => {
   return (
     <>
@@ -22,7 +23,7 @@ const Buttons = ({ filterItem, setItem, menuItems }) => {
         >
           All
         </button>
-
+        {/* <Item/> */}
         {/* <button
           className="btn-warning text-white p-1 mx-5"
           onClick={() => filterItem("Breakfast")}
