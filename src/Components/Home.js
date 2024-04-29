@@ -4,7 +4,7 @@
 
 import Bannercarousel from "./Bannercarousel";
 import FeaturedProducts from "./FeaturedProducts";
-import Firstmain from "./Firstmain";
+
 // import ResetPassword from "./Components/ResetPassword";
 import Shopbyprice from "./Shopbyprice"
 import TrendingProducts from "./TrendingProducts";
@@ -13,8 +13,10 @@ import Brandlogos from "./Brandlogos";
 import React from 'react';
 import ImageGrid from "./ImageGrid";
  import Services from "./Services";
- import Item from "./Filters/Item";
-//  import Location from "./Location";
+ import Product from "../Components/Product";
+ import Newsletter from "../Components/Newsletter";
+ import Productpage from "../Components/Productpage";
+
 export default function App() {
 
       
@@ -22,15 +24,14 @@ export default function App() {
             <>
  
                   <Bannercarousel />
-                  
                   <ImageGrid />
-                  <Firstmain/>
-
-                 
+                  {/* <Product/> */}
+                   <Productpage/>
                   <FeaturedProducts/>
+                  <Brandlogos/>
                   <Services/>
                   <TrendingProducts />
-
+                  <Newsletter/>
             </>
       );
 }

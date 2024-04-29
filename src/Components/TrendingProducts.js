@@ -8,6 +8,7 @@ import Banner2 from '../assets/headset.png';
 import Banner3 from '../assets/smart.png';
 import Banner4 from '../assets/powerbank.png';
 import Banner5 from '../assets/webcam.png';
+import { Container } from 'react-bootstrap';
 const SimpleCarousel = () => {
 
     const settings = {
@@ -48,7 +49,7 @@ const SimpleCarousel = () => {
 
 
     return (
-        <div style={{margin:'30px'}}>
+        <Container>
             <h3 style={{paddingLeft:'7%' ,fontWeight:'600',color:"#000"}}>Trending Gadgets</h3>
             <Slider {...settings} style={{padding:'20px'}} >
                 <div >
@@ -119,7 +120,7 @@ const SimpleCarousel = () => {
                 {/* Add more slides as needed */}
             </Slider>
 
-        </div>
+        </Container>
 
 
     );

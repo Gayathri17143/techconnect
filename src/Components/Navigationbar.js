@@ -6,19 +6,19 @@ import {
     NavDropdown,
 } from "react-bootstrap";
 const navBarData = [
-   
+
     {
         label: "Mobiles",
-        
+
         submenu: [
-          
+
             {
                 label: "IPhones",
                 url: "/iphones",
             },
             {
                 label: "Smart Phones",
-                url:"/Categories",
+                url: "/smartphones",
             },
             {
                 label: "Basic Phones",
@@ -54,13 +54,13 @@ const navBarData = [
                         label: "WebCamera",
                         url: "/Cameras/WebCamera",
                     },
-                   
+
                 ],
             },
-           
+
         ],
     },
-   
+
     {
         label: "Laptop & Tablets",
         submenu: [
@@ -78,7 +78,7 @@ const navBarData = [
                     },
                 ],
             },
-          
+
             {
                 label: "2 in 1 Laptop",
                 url: "/2in1laptop",
@@ -106,12 +106,12 @@ const navBarData = [
                 ],
             },
         ],
-        
+
     },
     {
         label: "Television",
         submenu: [
-           
+
             {
                 label: "4K Ultra HD TVS",
                 url: "/HD TVS",
@@ -145,7 +145,7 @@ const navBarData = [
     {
         label: "SmartWatch",
         submenu: [
-           
+
             {
                 label: "Wearables",
                 url: "/Wearables",
@@ -162,13 +162,13 @@ const navBarData = [
                 label: "Smart Watches",
                 url: "/Smart Watches",
             },
-            
+
         ],
     },
     {
         label: "Speaker",
         submenu: [
-           
+
             {
                 label: "Bluetooth Speakers",
                 url: "/Bluetooth Speakers",
@@ -193,20 +193,20 @@ const navBarData = [
                 label: "Sound Bars",
                 url: "/Sound Bars",
             },
-            
+
         ],
     },
     {
         label: "HeadPhones & Headsets",
-        
+
         submenu: [
-           
+
             {
                 label: "Wired",
                 url: "/Wired",
             },
-           
-          
+
+
             {
                 label: "Wireless",
                 url: "/Wireless",
@@ -229,14 +229,14 @@ const navBarData = [
                         label: "Earbuds",
                         url: "/True Wireless/Earbuds",
                     },
-                    
+
                 ],
             },
         ],
-        
+
     },
-    
-  
+
+
 ];
 
 function App() {
@@ -274,7 +274,7 @@ function App() {
     const navStyle = {
         color: "black",
         fontWeight: "bold"
-    
+
     };
     return (
         <Navbar
@@ -286,12 +286,12 @@ function App() {
                     style={{
                         color: "green",
                     }}>
-                    
+
                 </h1>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                
+
                 <Nav
                     className="mr-auto"
                     style={navStyle}>

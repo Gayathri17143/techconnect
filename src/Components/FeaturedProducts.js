@@ -7,16 +7,18 @@ import Vivo from "../assets/vivo-v30-pro.jpg";
 import Oneplus from "../assets/samsung-galaxy-s24-ultra-5g-sm-s928-stylus.jpg"; 
 import Samsung from "../assets/samsung-galaxy-m15.jpg"; 
 
+import { Container } from 'react-bootstrap';
 const ImageGrid = () => {
   return (
-  <div className="mar" style={{margin:'30px'}}>
+    <Container>
+ <div  >
     <h1 className="head">Feature Products</h1>
     <div className="grid-container-0">
      
       <div className="grid-item-0">
-        <img src={Realme} alt="Realme" />
+       <a href="/"> <img src={Realme} alt="Realme" />
         <div className="image-text-0">Realme 12+</div>
-        <p className="small">From ₹11,200</p>
+        <p className="small">From ₹11,200</p></a>
       </div>
       <div className="grid-item-0">
         <img src={Oppo} alt="Oppo" />
@@ -53,6 +55,8 @@ const ImageGrid = () => {
       </div>
     </div>
     </div>
+    </Container>
+ 
   );
 };
 

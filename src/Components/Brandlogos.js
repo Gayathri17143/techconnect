@@ -12,64 +12,53 @@ import Image9 from '../assets/nokia.png'
 
 const Gallery = () => {
   return (
-    <Carousel cols={3} rows={3} gap={1} loop>
-      <Carousel.Item>
-        <img width="50%" src= {Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width="50%" src={Image2} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width="50%" src={Image3} alt="text"  />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image4} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image5} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image6} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image7} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image8} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width="50%" src= {Image9} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
-      <Carousel.Item>
-      <img width="50%" src={Image1} alt="text" />
-      </Carousel.Item>
      
-      {/* ... */}
-    </Carousel>
+    <div className="container" style={{padding: "30px",background:"#00274b3d",    border: "1px solid #220a0a" }}>
+      <Carousel cols={5} rows={1} gap={2} loop>
+        <Carousel.Item>
+          <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image1} alt="text" />
+          </a>
+        </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image2} alt="text" />
+          </a> </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image3} alt="text" />
+          </a> </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image4} alt="text" />
+          </a>  </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image5} alt="text" />
+          </a> </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image6} alt="text" />
+          </a> </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image7} alt="text" />
+          </a> </Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image8} alt="text" />
+          </a></Carousel.Item>
+        <Carousel.Item>
+        <a href="/" target='_blank'>
+          <img style={{ width: "50%", display: "block", marginRight: "auto", marginLeft: "auto" }} src={Image9} alt="text" />
+          </a> </Carousel.Item>
+       
+
+
+        {/* ... */}
+      </Carousel>
+    </div>
+     
   )
 }
 export default Gallery;
